@@ -1,0 +1,257 @@
+/* General styling for the prediction page */
+.prediction-page {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 0px;
+    border-radius: 12px;
+    max-width: 1600px;
+    text-align: center;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.8);
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Loading text styling */
+.loading-text {
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #242424;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    animation: fadeInOut 1.5s ease-in-out infinite;
+    max-width: 280px;
+    margin: 40px auto;
+}
+
+/* No data text */
+.no-data-text {
+    font-size: 18px;
+    color: #bbb;
+    padding: 15px;
+    font-style: italic;
+}
+
+/* Timeframe buttons container */
+.timeframe-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Individual timeframe button styling */
+.timeframe-button {
+    background-color: #242424;
+    color: #ffffff;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.timeframe-button:hover {
+    background-color: #00d2ff;
+    border-color: #00a3ff;
+    transform: scale(1.1);
+}
+
+.timeframe-button.active {
+    background: linear-gradient(135deg, #007bff, #00d2ff);
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+/* Chart styling */
+.recharts-wrapper {
+    background: rgba(18, 18, 18, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    margin-top: -10px;
+    transition: all 0.3s ease;
+}
+
+/* Fade animation for loading text */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .prediction-page {
+        padding: 15px;
+        max-width: 95%;
+    }
+    .loading-text {
+        font-size: 16px;
+        padding: 12px;
+    }
+    .timeframe-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    .recharts-wrapper {
+        padding: 15px;
+    }
+}
+
+/* Full-screen loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    margin-left: 116px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #00d2ff;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    margin-bottom: 20px;
+}
+
+/* Loading message styling */
+.loading-message {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress bar container */
+.loading-progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+/* Animated progress bar */
+.progress {
+    height: 100%;
+    background: linear-gradient(135deg, #007bff, #00d2ff);
+    border-radius: 5px;
+    animation: progressBarAnimation 30s linear;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Progress bar animation */
+@keyframes progressBarAnimation {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* News ticker styling */
+.news-ticker {
+    background: linear-gradient(135deg, #007bff, #00d2ff);
+    padding: 8px 0;
+    overflow: hidden;
+    position: relative;
+    margin-top: 60px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.ticker-wrapper {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+/* Ticker content styling */
+.ticker-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    animation: fadeInOutTicker 1.5s ease-in-out;
+}
+
+.ticker-item {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 30px;
+    text-transform: uppercase;
+}
+
+/* Fade-in and fade-out effect */
+@keyframes fadeInOutTicker {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.no-prediction-message {
+    font-size: 18px;
+    color: #e0e0e0;
+    background-color: #242424;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto', sans-serif;
+    animation: fadeInOut 1.5s ease-in-out infinite;
+    letter-spacing: 1px;
+}
+
+/* Adding a fade effect to make it visually engaging */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.recharts-wrapper {
+    margin: 0 auto; /* Centers the chart horizontally */
+}

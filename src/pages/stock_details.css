@@ -1,0 +1,353 @@
+/* General styles for the stock details page */
+.stock-details-page {
+    background-color: #1c1c1e;
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Stock header section for price and change */
+.stock-header {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.price-info {
+    align-items: center;
+    gap: 20px; /* Space between current price and price details */
+    margin-top: -20px;
+}
+
+.price-details {
+    display: flex;
+    flex-direction: column; /* Stack price change and previous close vertically */
+    align-items: flex-center;
+    justify-content: flex-start; /* Ensure that prev close is directly below the price change */
+}
+
+/* Current price */
+.current-price {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    animation: fadeInOut 1.5s ease-in-out infinite; /* Applying animation */
+}
+
+/* Price change and previous close stacked vertically */
+.price-change {
+    font-size: 18px;
+    margin-top: -20px;
+}
+
+.previous-close {
+    font-size: 14px;
+    margin-top: -10px; /* Added margin to ensure there's spacing below the price change */
+    color: #c0c0c0;
+}
+
+.positive {
+    color: #00e676;
+}
+
+.negative {
+    color: #f44336;
+}
+
+/* Timeframe buttons */
+.timeframe-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+
+.timeframe-button {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Graph container */
+.recharts-wrapper {
+    margin-top: 15px;
+    background-color: #262626;
+    padding-top: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Tooltip styles for the graph */
+.recharts-tooltip-wrapper {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the loading message */
+.loading-message {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #333333;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto', sans-serif;
+    animation: fadeInOut 1.5s ease-in-out infinite;
+    max-width: 250px;
+}
+
+/* Subtle fade in and out animation */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .loading-message {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-message {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .stock-details-page {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .recharts-wrapper {
+        padding: 10px;
+    }
+
+    .stock-header .current-price {
+        font-size: 28px;
+    }
+
+    .stock-header .price-change {
+        font-size: 16px;
+    }
+
+    .stock-header .previous-close {
+        font-size: 12px;
+    }
+}
+
+/* Container for the random stocks section */
+.random-stocks-container {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #262626;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Grid for the random stocks */
+.random-stocks-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Each random stock card */
+.random-stock-card {
+    background-color: #333333;
+    padding: 2.7px; /* Reduce padding */
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 60px; /* Keep your preferred height */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+.random-stock-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.random-stock-name {
+    font-size: 15px; /* Adjust font size to fit within the height */
+    color: #ffffff;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 88%; /* Ensure the width constraint for truncation */
+    margin: 0 auto; /* Center the text horizontally */
+    text-align: center; /* Ensure text is centered in the box */
+}
+
+
+/* Stock price */
+.random-stock-price {
+    font-size: 15px; /* Adjust font size to fit better */
+    color: #00e676;
+    margin: 0; /* Remove unnecessary margins */
+    padding-top: 10px;
+}
+/* Adjust stock details container layout */
+.stock-details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* Main content of the stock details page */
+.stock-details-main {
+    flex: 1;
+    background-color: #1c1c1e;
+    color: #e0e0e0;
+    padding: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    margin-left: 0; /* Reset margin */
+    margin-right: 0; /* Reset margin */
+    margin-top: -5px;
+}
+
+.random-stocks-side {
+    flex: 0 0 200px; /* Fixed width for the sidebars */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-height: 110vh;
+    padding-left: 0; /* Ensure there's no extra padding on the sides */
+    padding-right: 0; /* Ensure there's no extra padding on the sides */
+}
+
+
+
+/* Tooltip styles for the graph */
+.recharts-tooltip-wrapper {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframe animation for fade in and fade out */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        opacity: 0.8;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Always-visible green shadow effect for the dropdown */
+.sector-filter-dropdown {
+    margin-left: 13px;
+    padding: 11px;
+    background-color: #262626;
+    color: #e0e0e0;
+    border: 2px solid #555;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0, 230, 118, 0.6); /* Permanent green shadow */
+    transition: background-color 0.3s, color 0.3s;
+    animation: fadeInOut 2s ease-in-out infinite; /* Subtle pulsating animation */
+    appearance: none;
+    position: relative;
+    text-align: center;
+}
+
+/* Custom dropdown arrow */
+.sector-filter-dropdown::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #e0e0e0;
+    pointer-events: none;
+}
+
+/* Hover and focus effects */
+.sector-filter-dropdown:hover {
+    background-color: #333333;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 230, 118, 0.6); /* Emphasize on hover */
+}
+
+.sector-filter-dropdown:focus {
+    outline: none;
+    background-color: #444444;
+    color: #ffffff;
+    border-color: #00e676;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.8); /* Stronger shadow on focus */
+}
+
+/* Responsive adjustments for dropdown */
+@media (max-width: 768px) {
+    .sector-filter-dropdown {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sector-filter-dropdown {
+        font-size: 10px;
+        padding: 6px;
+    }
+}
+
+/* Ensure the container and sidebars are responsive */
+@media (max-width: 1024px) {
+    .stock-details-container {
+        flex-direction: column;
+    }
+
+    .random-stocks-side {
+        display: none;
+    }
+}
+
+.recharts-wrapper {
+    width: auto !important;
+}
+

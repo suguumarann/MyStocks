@@ -1,0 +1,294 @@
+/* Dark theme styling */
+body {
+    background-color: #181818;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Home page container */
+.home-page {
+    padding: 20px;
+}
+
+/* Header styling with animation */
+.header-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1e1e1e, #333333); /* Gradient background */
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Center the search bar */
+.header-actions {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Search bar styling */
+.search-bar {
+    background: linear-gradient(135deg, #262626, #333333); /* Gradient background */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    outline: none;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover styles */
+.search-bar:focus,
+.portfolio-button:hover,
+.more-details-button:hover,
+.add-button:hover,
+.remove-button:hover {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Portfolio button styling */
+.portfolio-button {
+    background: linear-gradient(135deg, #007bff, #00d2ff); /* Modern blue gradient background */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    margin-left: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.portfolio-button:hover {
+    background: linear-gradient(135deg, #0066cc, #00aaff); /* Slightly darker blue gradient on hover */
+    transform: scale(1.05); /* Add a slight zoom effect on hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover for a pop-out effect */
+}
+
+/* Container for the stocks */
+.stocks-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+
+/* Card for each stock */
+.stock-card {
+    background: linear-gradient(135deg, #262626, #333333); /* Gradient background */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.stock-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Stock name styling */
+.stock-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+}
+
+/* Stock price styling */
+.stock-price {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Stock change styling */
+.stock-change {
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Positive and negative color coding */
+.positive {
+    background: linear-gradient(135deg, #4caf50, #66bb6a); /* Gradient background */
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.negative {
+    background: linear-gradient(135deg, #f44336, #e53935); /* Gradient background */
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Add to Portfolio button */
+.add-button {
+    background: linear-gradient(135deg, #4caf50, #66bb6a); /* Gradient background */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background: linear-gradient(135deg, #45a049, #5eaf5e); /* Gradient background on hover */
+}
+
+/* Remove from Portfolio button */
+.remove-button {
+    background: linear-gradient(135deg, #f44336, #e53935); /* Gradient background */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background: linear-gradient(135deg, #e53935, #d32f2f); /* Gradient background on hover */
+}
+
+/* Modal overlay styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content styling */
+.modal-content {
+    background: linear-gradient(135deg, #262626, #333333); /* Gradient background */
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Close button styling */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* More Details button styling */
+.more-details-button {
+    background: linear-gradient(135deg, #007bff, #00d2ff); /* Gradient background */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: auto;
+    display: inline-block;
+}
+
+.more-details-button:hover, .close-button:hover {
+    background: linear-gradient(135deg, #0066cc, #00aaff); /* Slightly darker blue gradient on hover */
+    transform: scale(1.05); /* Add a slight zoom effect on hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover for a pop-out effect */
+}
+
+/* Filter dropdown styling */
+.filter-dropdown {
+    background: linear-gradient(135deg, #262626, #333333); /* Gradient background */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+    margin-left: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.filter-dropdown:hover, .filter-dropdown:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #1e1e1e;
+}
+
+/* Loading text styling with animation */
+.loading-text {
+    font-size: 20px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #333333, #444444); /* Gradient background */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    display: inline-block;
+    margin: 20px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto', sans-serif;
+    animation: fadeInOut 1.5s ease-in-out infinite;
+}
